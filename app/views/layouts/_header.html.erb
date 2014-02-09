@@ -20,7 +20,12 @@
             
             <% if user_signed_in? %>
                 <li><%= link_to "ACCOUNT SETTINGS", edit_user_registration_path %></li>
-                <li><%= link_to 'ADD PIN', new_pin_path %></li>      
+                <li>
+                    <%= link_to new_pin_path do %>
+                        <span class="glyphicon glyphicon-plus"></span> ADD PIN
+                    <% end %>
+                </li>
+
                 <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
                 <% else %>
                 <li><%= link_to "SIGN IN", new_user_session_path %></li>
